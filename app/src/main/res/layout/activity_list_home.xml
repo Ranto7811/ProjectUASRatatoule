@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5E699F5B">
+        android:background="#5E90938F">
 
         <ImageView
             android:id="@+id/iv_food_home"
