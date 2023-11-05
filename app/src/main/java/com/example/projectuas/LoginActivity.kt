@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             val password = usernameEditText.text.toString()
 
-            if (username == "Ranto" && password == "contohpassword") {
+            if (username == "ranto" && password == "ranto") {
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
             } else {
