@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener{
             val username = usernameEditText.text.toString()
-            val password = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
 
             if (username == "ranto" && password == "ranto") {
                 val intent = Intent(this, RegisterActivity::class.java)
