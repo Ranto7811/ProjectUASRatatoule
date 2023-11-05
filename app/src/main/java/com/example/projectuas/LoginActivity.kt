@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,26 @@ class LoginActivity : AppCompatActivity() {
         noAccount.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    startActivity(Intent(this, RegisterActivity::class.java))
+                    true
+                }
+                R.id.add -> {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    true
+                }
+                R.id.account -> {
+                    startActivity(Intent(this, RegisterActivity::class.java))
+                    true
+                }
+                else -> false
+            }
         }
 
     }
