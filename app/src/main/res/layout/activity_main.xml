@@ -30,9 +30,11 @@
                 app:layout_constraintBottom_toTopOf="@+id/materialCardView"
                 app:layout_constraintEnd_toStartOf="@+id/logo_home"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"></TextView>
+                app:layout_constraintStart_toStartOf="parent">
+            </TextView>
 
             <ImageView
+                android:contentDescription="gambarresep"
                 android:id="@+id/logo_home"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -41,7 +43,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.018"></ImageView>
+                app:layout_constraintVertical_bias="0.018">
+            </ImageView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
@@ -63,14 +66,15 @@
             </com.google.android.material.card.MaterialCardView>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
                 android:layout_width="409dp"
                 android:layout_height="520dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView">
-
             </androidx.recyclerview.widget.RecyclerView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
