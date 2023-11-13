@@ -8,10 +8,10 @@
         android:id="@+id/Akun"
         android:layout_width="49dp"
         android:layout_height="40dp"
-        android:background="#E1D6D6"
         android:text="Akun"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:background="#B5D1C2C2"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="15dp" />
@@ -25,14 +25,14 @@
        tools:layout_editor_absoluteX="7dp"
        tools:layout_editor_absoluteY="4dp" />
 
-   <TextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Pengguna"
         android:textColor="@color/black"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="126dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="108dp" />
 
     <TextView
         android:layout_width="179dp"
@@ -41,7 +41,7 @@
         android:textColor="#807A7A"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="145dp" />
+        tools:layout_editor_absoluteY="127dp" />
 
     <ImageView
         android:layout_width="110dp"
@@ -166,5 +166,18 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="387dp"
         tools:layout_editor_absoluteY="299dp" />
+
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="109dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#70BA8F8F"
+        android:text="Profil Saya"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="166dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
