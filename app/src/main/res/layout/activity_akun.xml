@@ -26,6 +26,7 @@
        tools:layout_editor_absoluteY="4dp" />
 
     <TextView
+        android:id="@+id/NamaPengguna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Pengguna"
@@ -35,15 +36,17 @@
         tools:layout_editor_absoluteY="108dp" />
 
     <TextView
+        android:id="@+id/EmailLabel"
         android:layout_width="179dp"
         android:layout_height="21dp"
-        android:text="namapengguna@gmail.com"
+        android:text="pengguna@gmail.com"
         android:textColor="#807A7A"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="127dp" />
 
     <ImageView
+        android:id="@+id/gambar"
         android:layout_width="110dp"
         android:layout_height="95dp"
         android:src="@drawable/profil"
@@ -169,15 +172,15 @@
 
     <Button
         android:id="@+id/myButton"
-        android:layout_width="109dp"
-        android:layout_height="35dp"
+        android:layout_width="177dp"
+        android:layout_height="50dp"
         android:backgroundTint="#70BA8F8F"
         android:text="Profil Saya"
         android:textColor="@color/black"
         android:textSize="10sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="166dp"/>
+        tools:layout_editor_absoluteY="164dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
