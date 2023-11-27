@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountFragment">
+    tools:context=".MainActivity">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -36,6 +36,7 @@
         tools:layout_editor_absoluteY="4dp" />
 
     <TextView
+        android:id="@+id/NamaPengguna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Pengguna"
@@ -45,6 +46,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/EmailPengguna"
         android:layout_width="179dp"
         android:layout_height="21dp"
         android:text="namapengguna@gmail.com"
@@ -54,6 +56,7 @@
         tools:layout_editor_absoluteY="145dp" />
 
     <ImageView
+        android:id="@+id/profil"
         android:layout_width="110dp"
         android:layout_height="95dp"
         android:src="@drawable/profil"
@@ -73,6 +76,7 @@
         tools:layout_editor_absoluteY="250dp" />
 
     <ImageView
+        android:id="@+id/imageResep"
         android:layout_width="25dp"
         android:layout_height="35dp"
         android:src="@drawable/topi"
@@ -92,6 +96,7 @@
         tools:layout_editor_absoluteY="299dp" />
 
     <ImageView
+        android:id="@+id/imageSave"
         android:layout_width="25dp"
         android:layout_height="28dp"
         android:src="@drawable/save"
@@ -111,6 +116,7 @@
         tools:layout_editor_absoluteY="349dp" />
 
     <ImageView
+        android:id="@+id/imageFavorite"
         android:layout_width="25dp"
         android:layout_height="22dp"
         android:src="@drawable/love"
@@ -130,6 +136,7 @@
         tools:layout_editor_absoluteY="395dp" />
 
     <ImageView
+        android:id="@+id/ImageLogout"
         android:layout_width="54dp"
         android:layout_height="43dp"
         android:src="@drawable/keluar"
@@ -138,6 +145,7 @@
         tools:layout_editor_absoluteY="384dp" />
 
     <TextView
+        android:id="@+id/Resep1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=">"
@@ -148,6 +156,7 @@
         tools:layout_editor_absoluteY="250dp" />
 
     <TextView
+        android:id="@+id/Tersimpan1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=">"
@@ -158,6 +167,7 @@
         tools:layout_editor_absoluteY="395dp" />
 
     <TextView
+        android:id="@+id/Favourite1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=">"
@@ -168,6 +178,7 @@
         tools:layout_editor_absoluteY="351dp" />
 
     <TextView
+        android:id="@+id/Logout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=">"
