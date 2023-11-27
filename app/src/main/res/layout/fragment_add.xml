@@ -1,17 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:orientation="vertical"
+    android:background="@color/teal_200"
     tools:context=".AddFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Tambahkan foto masakan"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textSize="20sp" />-->
+
+    <Button
+        android:id="@+id/button_pilih_foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Account Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Masukkan Foto" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/ETJudul"
+        android:layout_width="300dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:hint="Judul: Masukkan judul Masakan"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/ETBahan"
+        android:layout_width="300dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:hint="Bahan-bahan: Masukkan bahan-bahan masakan"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/ETLangkah"
+        android:layout_width="300dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:hint="Langkah-langkah: Masukkan langkah-langkah"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:text="Upload" />
+
+
+</LinearLayout>
