@@ -1,181 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".AccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/Akun"
-        android:layout_width="65dp"
-        android:layout_height="39dp"
-        android:text="Akun"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="71dp" />
 
-    <EditText
-        android:id="@+id/TextViewEditText"
-        android:layout_width="420dp"
-        android:layout_height="79dp"
-        android:background="#D8D1D1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="-8dp" />
+<!--    <ImageView-->
+<!--        android:id="@+id/logoRatatoule"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="276dp"-->
+<!--        android:src="@drawable/ratatoule"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="45dp"
-        android:layout_height="51dp"
-        android:src="@drawable/ratatoule"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="4dp" />
+        android:id="@+id/logoProfil"
+        android:layout_width="105dp"
+        android:layout_height="93dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/profil"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/TVName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
         android:text="Nama Pengguna"
         android:textColor="@color/black"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="126dp"
-        tools:ignore="MissingConstraints" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/logoProfil"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="179dp"
-        android:layout_height="21dp"
-        android:text="namapengguna@gmail.com"
-        android:textColor="#807A7A"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="145dp" />
-
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="95dp"
-        android:src="@drawable/profil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="96dp" />
-
-    <TextView
-        android:id="@+id/resep"
+        android:id="@+id/TVEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resep Saya"
+        android:layout_marginTop="16dp"
+        android:text="pengguna@gmail.com"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintLeft_toRightOf="@id/logoProfil"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TVName" />
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="35dp"
-        android:src="@drawable/topi"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="243dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tersimpan"
+    <Button
+        android:id="@+id/BTNLihatProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tersimpan"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="299dp" />
+        android:layout_marginTop="48dp"
+        android:text="Lihat Profil Saya -->"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TVEmail" />
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="28dp"
-        android:src="@drawable/save"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="299dp" />
-
-    <TextView
-        android:id="@+id/favourite"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/BTNResepSaya"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Favourite"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#ffff"
+        android:text="👩‍🍳   Resep Saya                                     >"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="349dp" />
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNLihatProfile" />
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="22dp"
-        android:src="@drawable/love"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="349dp" />
-
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/BTNTersimpan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#ffff"
+        android:text="💾   Tersimpan                                      >"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="395dp" />
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNResepSaya" />
 
-    <ImageView
-        android:layout_width="54dp"
-        android:layout_height="43dp"
-        android:src="@drawable/keluar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="384dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/BTNFavorite"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=">"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#ffff"
+        android:text="🤍   Favorite                                          >"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="387dp"
-        tools:layout_editor_absoluteY="250dp" />
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNTersimpan" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/BTNKeluar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=">"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#ffff"
+        android:text="↪    Keluar                                             >"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="387dp"
-        tools:layout_editor_absoluteY="395dp" />
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNFavorite" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=">"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="387dp"
-        tools:layout_editor_absoluteY="351dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=">"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="387dp"
-        tools:layout_editor_absoluteY="299dp" />
+    <!--    <TextView-->
+<!--        android:id="@+id/Akun"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Akun"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/logoImageView"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/logoImageView"-->
+<!--        android:layout_width="45dp"-->
+<!--        android:layout_height="51dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:src="@drawable/ratatoule"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.043"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Nama Pengguna"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Akun"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="179dp"-->
+<!--        android:layout_height="21dp"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="namapengguna@gmail.com"-->
+<!--        android:textColor="#807A7A"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="110dp"-->
+<!--        android:layout_height="95dp"-->
+<!--        android:src="@drawable/profil"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Akun"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/resep"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="28dp"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:text="Resep Saya"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="72dp"-->
+<!--        android:src="@drawable/topi"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tersimpan"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Tersimpan"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/resep"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="74dp" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:src="@drawable/save"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/tersimpan"-->
+<!--        app:layout_constraintHorizontal_bias="0.41"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/favourite"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:text="Favourite"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tersimpan"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="74dp" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView4"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="22dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:src="@drawable/love"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/favourite"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView3"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/logout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="Logout"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView5"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/favourite"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView5"-->
+<!--        android:layout_width="36dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:src="@drawable/keluar"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView4"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="88dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:text=">"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView3"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text=">"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.918"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/logout"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView6"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:text=">"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.914"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/favourite"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="248dp"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:text=">"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/tersimpan"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView4"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

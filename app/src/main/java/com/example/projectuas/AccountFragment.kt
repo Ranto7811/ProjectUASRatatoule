@@ -1,9 +1,16 @@
+package com.example.projectuas
+
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.projectuas.R
+
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
 class AccountFragment : Fragment() {
     private var param1: String? = null
@@ -25,14 +32,14 @@ class AccountFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_account, container, false)
 
         // Pemanggilan findViewById dan inisialisasi variabel
-        val myButton = view.findViewById<Button>(R.id.)
-        val logoImageView = view.findViewById<ImageView>(R.id.logoImageView)
-        val resepTextView = view.findViewById<TextView>(R.id.resep)
-        val tersimpanTextView = view.findViewById<TextView>(R.id.tersimpan)
-        val favouriteTextView = view.findViewById<TextView>(R.id.favourite)
-        val logoutTextView = view.findViewById<TextView>(R.id.logout)
-        val penggunaTextView = view.findViewById<TextView>(R.id.NamaPengguna)
-        val imageView = view.findViewById<ImageView>(R.id.gambar)
+//        val myButton = view.findViewById<Button>(R.id.)
+//        val logoImageView = view.findViewById<ImageView>(R.id.logoImageView)
+//        val resepTextView = view.findViewById<TextView>(R.id.resep)
+//        val tersimpanTextView = view.findViewById<TextView>(R.id.tersimpan)
+//        val favouriteTextView = view.findViewById<TextView>(R.id.favourite)
+//        val logoutTextView = view.findViewById<TextView>(R.id.logout)
+//        val penggunaTextView = view.findViewById<TextView>(R.id.NamaPengguna)
+//        val imageView = view.findViewById<ImageView>(R.id.gambar)
 
         // Lakukan inisialisasi atau manipulasi tampilan di sini, setelah tampilan tercipta
 
