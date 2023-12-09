@@ -3,32 +3,72 @@ package com.example.projectuas
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
+import com.example.projectuas.databinding.ActivityRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
+
+    lateinit var binding : ActivityRegisterBinding
+    lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        binding= ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val usernameEditText = findViewById<EditText>(R.id.usernameEditText)
-        val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
-        val emailEditText = findViewById<EditText>(R.id.EmailEditText)
-        val registerButton = findViewById<Button>(R.id.RegisterButton)
+        auth = FirebaseAuth.getInstance()
 
-        registerButton.setOnClickListener{
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
-            val email = emailEditText.text.toString()
+        binding.RegisterButton.setOnClickListener{
+            val email = binding.EmailEditText.text.toString()
+            val password = binding.passwordEditText.text.toString()
 
-            if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
-                Toast.makeText(this, "Harap isi semua kolom", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Berhasil mendaftar akun", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+            //validasi email
+            if(email.isEmpty()){
+                binding.EmailEditText.error = "Email Harus Diisi"
+                binding.EmailEditText.requestFocus()
+                return@setOnClickListener
             }
+
+            //validasi email tidak sesuai
+            if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.EmailEditText.error = "Email Tidak Valid"
+                binding.EmailEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            //validasi password
+            if(password.isEmpty()){
+                binding.passwordEditText.error = "Password Harus Diisi"
+                binding.passwordEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            //validasi panjang password
+            if (password.length < 6){
+                binding.passwordEditText.error = "Password Minimal 6 Karakter"
+                binding.passwordEditText.requestFocus()
+                return@setOnClickListener
+            }
+
+            RegisterFirebase(email,password)
         }
+
+    }
+
+    private fun RegisterFirebase(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email,password)
+            .addOnCompleteListener(this){
+                if(it.isSuccessful){
+                    Toast.makeText(this, "Berhasil Daftar Akun", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    it.exception?.message?.let { it1 -> Log.d("Login", it1) }
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }
