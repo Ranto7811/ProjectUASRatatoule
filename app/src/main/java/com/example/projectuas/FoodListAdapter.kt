@@ -1,14 +1,17 @@
 package com.example.projectuas
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectuas.model.Masakan
 
 class FoodListAdapter(private val foodList: List<Makanan>) :
-RecyclerView.Adapter<FoodListAdapter.FoodViewHolder>() {
+    RecyclerView.Adapter<FoodListAdapter.FoodViewHolder>() {
     class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val TitleResep: TextView = itemView.findViewById(R.id.tv_food_home)
         val imageResep: ImageView = itemView.findViewById(R.id.iv_food_home)

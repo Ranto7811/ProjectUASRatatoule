@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectuas.databinding.FragmentAddBinding
+import com.example.projectuas.model.Masakan
+import com.example.projectuas.databinding.FragmentHomeBinding
+import com.google.firebase.database.*
 
 class HomeFragment : Fragment() {
     //recyclerview
