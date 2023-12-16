@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.projectuas.databinding.FragmentAddBinding
 import com.example.projectuas.model.Masakan
-import com.example.projectuas.databinding.FragmentHomeBinding
 import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
 
 class HomeFragment : Fragment() {
     //recyclerview
     private lateinit var recyclerView: RecyclerView
     private lateinit var makananAdapter: FoodListAdapter
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var foodlist: MutableList<Makanan>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,19 +25,26 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         recyclerView = view.findViewById(R.id.rv)
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false)
-        val foodList = listOf(
-            Makanan("Cireng", R.drawable.cireng),
-            Makanan("Perkedel", R.drawable.perkedel),
-            Makanan("Orak-Arik Tempe", R.drawable.tmpe),
-            Makanan("Omellet", R.drawable.cireng),
-            Makanan("Ayam Suwir", R.drawable.ayamsuwi)
-            // Tambahkan lebih banyak makanan jika diperlukan
-        )
-        makananAdapter = FoodListAdapter(foodList)
+        foodlist = mutableListOf()
+        makananAdapter = FoodListAdapter(foodlist)
         recyclerView.adapter = makananAdapter
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("masakan")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                foodlist.clear()
+
+                for (dataSnapshot in snapshot.children) {
+                    val resep = dataSnapshot.getValue(Makanan::class.java)
+                    resep?.let { foodlist.add(it) }
+                }
+
+                makananAdapter.notifyDataSetChanged()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                // Handle error
+            }
+        })
         return view
     }
-
 }
