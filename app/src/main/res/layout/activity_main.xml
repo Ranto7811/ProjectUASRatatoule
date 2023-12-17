@@ -32,21 +32,19 @@
                 app:layout_constraintBottom_toTopOf="@+id/materialCardView"
                 app:layout_constraintEnd_toStartOf="@+id/logo_home"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent">
-            </TextView>
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <ImageView
-                android:contentDescription="gambarresep"
                 android:id="@+id/logo_home"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
+                android:contentDescription="gambarresep"
                 android:src="@drawable/ratatoule"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.018">
-            </ImageView>
+                app:layout_constraintVertical_bias="0.018"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
@@ -66,7 +64,6 @@
                     android:iconifiedByDefault="false"
                     app:queryHint="Search here" />
             </com.google.android.material.card.MaterialCardView>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="409dp"
@@ -74,11 +71,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialCardView">
-            </androidx.recyclerview.widget.RecyclerView>
-
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
 
     <FrameLayout

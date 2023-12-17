@@ -66,37 +66,34 @@ class AddFragment : Fragment() {
         val menuRef = database.getReference("masakan")
         val newItemKey = menuRef.push().key
 
-        if(image!=null){
+        if(image != null && newItemKey != null) {
             val storageRef = FirebaseStorage.getInstance().reference
-            val imageRef = storageRef.child("masakan_images/${newItemKey}.jpg")
+            val imageRef = storageRef.child("masakan_images/$newItemKey.jpg")
             val uploadTask = imageRef.putFile(image!!)
 
             uploadTask.addOnSuccessListener {
-                imageRef.downloadUrl.addOnSuccessListener {
-                    downloadUrl->
-
-                    val newItem=Masakan(
+                imageRef.downloadUrl.addOnSuccessListener { downloadUrl ->
+                    val newItem = Masakan(
                         judul = judul,
                         bahan = bahan,
                         langkah = langkah,
                         image = downloadUrl.toString()
                     )
-                    newItemKey?.let{
-                        key->
-                        menuRef.child(key).setValue(newItem).addOnSuccessListener {
+
+                    menuRef.child(newItemKey).setValue(newItem)
+                        .addOnSuccessListener {
                             Toast.makeText(requireContext(), "Berhasil upload resep", Toast.LENGTH_SHORT).show()
                         }
-                            .addOnFailureListener{
-                                Toast.makeText(requireContext(), "Gagal upload resep", Toast.LENGTH_SHORT).show()
-                            }
-                    }
+                        .addOnFailureListener {
+                            Toast.makeText(requireContext(), "Gagal upload resep", Toast.LENGTH_SHORT).show()
+                        }
                 }
             }
-                .addOnFailureListener{
-                    Toast.makeText(requireContext(), "image upload failed", Toast.LENGTH_SHORT).show()
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(), "Gagal upload gambar", Toast.LENGTH_SHORT).show()
                 }
-        }else{
-            Toast.makeText(requireContext(), "Tidak ada image yang dipilih", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Tidak ada gambar yang dipilih atau terjadi kesalahan", Toast.LENGTH_SHORT).show()
         }
     }
 
