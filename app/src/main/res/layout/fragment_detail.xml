@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailFragment"
+    android:padding="15dp"
+    android:background="#F8F392">
+
+    <LinearLayout
+        android:id="@+id/linearjudul"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/img_backdetail"
+            android:layout_width="48dp"
+            android:layout_weight="0"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/ic_back"
+            android:contentDescription="button back"/>
+        <TextView
+            android:id="@+id/tv_judulresep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Judul Resep"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_outline_fav"
+            android:layout_width="48dp"
+            android:layout_weight="0"
+            android:layout_height="48dp"
+            android:onClick="onFavoriteButton"
+            android:src="@drawable/ic_heart_outline"
+            android:layout_gravity="right"
+            android:contentDescription="button love"/>
+        <ImageView
+            android:id="@+id/ic_outline_simpan"
+            android:layout_width="48dp"
+            android:layout_weight="0"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_save_outline"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_author"
+        app:layout_constraintTop_toBottomOf="@id/linearjudul"
+        android:text="Alieffiea"
+        android:gravity="center"
+        android:textColor="#323131"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_author">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_resep"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_author">
+                <ImageView
+                    android:id="@+id/iv_imgdetail"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cireng"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Gambar makanan"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:id="@+id/cv_bahan"
+                app:layout_constraintTop_toBottomOf="@+id/cv_resep">
+                <TextView
+                    android:id="@+id/tv_judulbahan"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Bahan : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_bahan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_judulbahan"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="10dp"
+                    android:text="ayam"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical"
+                    android:paddingBottom="5dp"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cv_carabuat"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tv_judulcarabuat"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"
+                    android:text="Cara Membuat : "
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_carabuat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_judulcarabuat"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="1. Siapkan Bahan - Bahan"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

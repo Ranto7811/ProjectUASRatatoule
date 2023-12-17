@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -51,8 +52,47 @@ class HomeFragment : Fragment() {
             }
         })
 
+        val searchView = view.findViewById<SearchView>(R.id.searchView)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Handle submission if needed
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                loadData(newText)
+                return true
+            }
+        })
+
         return view
     }
+
+    private fun loadData(query: String?) {
+        val queryRef = if (query.isNullOrBlank()) {
+            databaseReference
+        } else {
+            databaseReference.orderByChild("judul").startAt(query).endAt(query + "\uf8ff")
+        }
+
+        queryRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                foodlist.clear()
+
+                for (dataSnapshot in snapshot.children) {
+                    val resep = dataSnapshot.getValue(Makanan::class.java)
+                    resep?.let { foodlist.add(it) }
+                }
+
+                makananAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle error
+            }
+        })
+    }
+
     private fun navigateToDetailResepFragment(masakanId: String) {
         val detailResepFragment = FragmentDetailResep()
 

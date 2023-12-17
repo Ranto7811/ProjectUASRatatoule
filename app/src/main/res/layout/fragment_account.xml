@@ -22,53 +22,32 @@
 <!--        app:layout_constraintLeft_toLeftOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logoProfil"
-        android:layout_width="105dp"
-        android:layout_height="93dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="36dp"
         android:src="@drawable/profil"
+        app:civ_border_color="@color/black"
+        android:foregroundGravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/TVName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
-        android:text="Nama Pengguna"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/logoProfil"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TVEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="72dp"
         android:text="pengguna@gmail.com"
         android:textColor="@color/black"
-        app:layout_constraintHorizontal_bias="0.272"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintLeft_toRightOf="@id/logoProfil"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TVName" />
-
-    <Button
-        android:id="@+id/BTNLihatProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Lihat Profil Saya -->"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TVEmail" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BTNResepSaya"
@@ -82,7 +61,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/BTNLihatProfile" />
+        app:layout_constraintTop_toBottomOf="@id/logoProfil"
+        app:layout_goneMarginTop="20dp"/>
 
     <Button
         android:id="@+id/BTNTersimpan"
@@ -113,6 +93,35 @@
         app:layout_constraintTop_toBottomOf="@id/BTNTersimpan" />
 
     <Button
+        android:id="@+id/BTNEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#ffff"
+        android:text="       Edit Profile                                  >"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNFavorite" />
+
+    <Button
+        android:id="@+id/BTNUbahPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#ffff"
+        android:text="       Ubah Pasword                               >"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTNEditProfile" />
+
+
+    <Button
         android:id="@+id/BTNKeluar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,7 +133,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/BTNFavorite" />
+        app:layout_constraintTop_toBottomOf="@id/BTNUbahPassword" />
 
 
     <!--    <TextView-->
