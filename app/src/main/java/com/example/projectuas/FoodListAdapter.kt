@@ -16,9 +16,9 @@ class FoodListAdapter(
     val fragment: FragmentManager,
     val context: Context
 ): RecyclerView.Adapter<FoodListAdapter.FoodViewHolder>() {
-    interface OnItemClickListener {
-        fun onItemClick(makanan: Makanan)
-    }
+//    interface OnItemClickListener {
+//        fun onItemClick(makanan: Makanan)
+//    }
     inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleResep: TextView = itemView.findViewById(R.id.tv_food_home)
         val imageResep: ImageView = itemView.findViewById(R.id.iv_food_home)

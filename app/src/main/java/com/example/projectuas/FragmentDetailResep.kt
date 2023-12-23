@@ -21,7 +21,10 @@ class FragmentDetailResep : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_resep, container, false)
-
+        //membuat icon arrow back untuk kembali ke halaman sebelumnya
+        val iconback = view.findViewById<ImageView>(R.id.img_backdetail)
+        iconback.setOnClickListener {
+        activity?.onBackPressed() }
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
