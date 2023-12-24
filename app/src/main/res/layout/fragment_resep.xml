@@ -36,21 +36,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ic_outline_fav"
+        <ToggleButton
+            android:id="@+id/tgl_fav"
             android:layout_width="48dp"
-            android:layout_weight="0"
             android:layout_height="48dp"
-            android:onClick="onFavoriteButton"
-            android:src="@drawable/ic_heart_outline"
-            android:layout_gravity="right"
-            android:contentDescription="button love"/>
-        <ImageView
-            android:id="@+id/ic_outline_simpan"
-            android:layout_width="48dp"
-            android:layout_weight="0"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_save_outline"/>
+            android:textOn=""
+            android:textOff=""
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/favorite_toggle"/>
+
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
